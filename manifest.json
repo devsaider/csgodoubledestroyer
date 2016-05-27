@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+
+    "name": "CSGODouble Destroyer",
+    "description": "Helps a lot with CSGODouble",
+    "version": "1.0",
+
+    "browser_action": {
+        // "default_icon": "icon.jpg",
+        // "default_popup": "html/popup.html"
+    },
+    "content_scripts": [{
+        "js": ["js/jquery-1.12.4.min.js", "js/global.js", "js/deposit.js"],
+        "matches": ["*://*.csgodouble.com/deposit.php"],
+        "run_at": "document_end"
+    }, {
+        "js": ["js/jquery-1.12.4.min.js", "js/global.js", "js/withdraw.js"],
+        "matches": ["*://*.csgodouble.com/withdraw.php"],
+        "run_at": "document_end"
+    }],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "http://csgodouble.com/",
+        "*://*.steamcommunity.com/*"
+    ]
+}
